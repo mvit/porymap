@@ -15,6 +15,7 @@ ICON = resources/icons/porymap.icns
 QMAKE_CXXFLAGS += -std=c++11 -Wall
 
 SOURCES += src/core/block.cpp \
+    src/core/asset.cpp \
     src/core/blockdata.cpp \
     src/core/event.cpp \
     src/core/heallocation.cpp \
@@ -33,6 +34,7 @@ SOURCES += src/core/block.cpp \
     src/lib/orderedjson.cpp \
     src/mainwindow_scriptapi.cpp \
     src/ui/aboutporymap.cpp \
+    src/ui/assetpixmapitem.cpp \
     src/ui/draggablepixmapitem.cpp \
     src/ui/bordermetatilespixmapitem.cpp \
     src/ui/collisionpixmapitem.cpp \
@@ -84,7 +86,8 @@ SOURCES += src/core/block.cpp \
     src/settings.cpp \
     src/log.cpp
 
-HEADERS  += include/core/block.h \
+HEADERS  += include/core/asset.h \
+    include/core/block.h \
     include/core/blockdata.h \
     include/core/event.h \
     include/core/heallocation.h \
@@ -105,6 +108,7 @@ HEADERS  += include/core/block.h \
     include/lib/orderedmap.h \
     include/lib/orderedjson.h \
     include/ui/aboutporymap.h \
+    include/ui/assetpixmapitem.h \
     include/ui/draggablepixmapitem.h \
     include/ui/bordermetatilespixmapitem.h \
     include/ui/collisionpixmapitem.h \
@@ -154,7 +158,7 @@ HEADERS  += include/core/block.h \
     include/project.h \
     include/scripting.h \
     include/settings.h \
-    include/log.h
+    include/log.h \
 
 FORMS    += forms/mainwindow.ui \
     forms/eventpropertiesframe.ui \

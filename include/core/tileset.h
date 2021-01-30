@@ -2,6 +2,7 @@
 #ifndef TILESET_H
 #define TILESET_H
 
+#include "asset.h"
 #include "metatile.h"
 #include "tile.h"
 #include <QImage>
@@ -28,6 +29,7 @@ public:
 
     QList<QImage> *tiles = nullptr;
     QList<Metatile*> *metatiles = nullptr;
+    QList<Asset*> *assets = nullptr;
     QList<QList<QRgb>> *palettes = nullptr;
     QList<QList<QRgb>> *palettePreviews = nullptr;
 
