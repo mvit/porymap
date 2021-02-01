@@ -1284,6 +1284,7 @@ bool Editor::displayMap() {
     displayMovementPermissionSelector();
     displayMapMetatiles();
     displayMapMovementPermissions();
+    displayAssets();
     displayBorderMetatiles();
     displayCurrentMetatilesSelection();
     displayMapEvents();
@@ -1376,6 +1377,20 @@ void Editor::displayMapMovementPermissions() {
 
     collision_item->draw(true);
     scene->addItem(collision_item);
+}
+
+void Editor::displayAssets() {
+    if (selected_asset_item && selected_asset_item->scene()) {
+        selected_asset_item->scene()->removeItem(selected_asset_item);
+        delete selected_asset_item;
+    }
+
+    scene_assets = new QGraphicsScene;
+    selected_asset_item = new AssetPixmapItem(map, this-> metatile_selector_item, new Asset());
+    selected_asset_item->draw();
+    scene_assets->addItem(selected_asset_item);
+    //For when the asset itself is changed
+    //connect(selected_asset_item, SIGNAL(assetMetatilesChanged()), this, SLOT(onAssetMetatilesChanged()));
 }
 
 void Editor::displayBorderMetatiles() {

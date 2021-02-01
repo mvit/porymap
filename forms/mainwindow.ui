@@ -842,37 +842,123 @@
                         <attribute name="title">
                          <string>Presets</string>
                         </attribute>
-                        <widget class="QScrollArea" name="scrollArea">
+                        <widget class="QScrollArea" name="scrollArea_3">
                          <property name="geometry">
                           <rect>
                            <x>0</x>
-                           <y>0</y>
+                           <y>10</y>
                            <width>430</width>
                            <height>234</height>
                           </rect>
                          </property>
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="verticalScrollBarPolicy">
+                          <enum>Qt::ScrollBarAlwaysOn</enum>
+                         </property>
+                         <property name="horizontalScrollBarPolicy">
+                          <enum>Qt::ScrollBarAsNeeded</enum>
+                         </property>
+                         <property name="sizeAdjustPolicy">
+                          <enum>QAbstractScrollArea::AdjustIgnored</enum>
+                         </property>
                          <property name="widgetResizable">
                           <bool>true</bool>
                          </property>
-                         <widget class="QWidget" name="scrollAreaWidgetContents_3">
+                         <property name="alignment">
+                          <set>Qt::AlignHCenter|Qt::AlignTop</set>
+                         </property>
+                         <widget class="QWidget" name="scrollAreaWidgetContents_5">
+                          <property name="enabled">
+                           <bool>true</bool>
+                          </property>
                           <property name="geometry">
                            <rect>
                             <x>0</x>
                             <y>0</y>
-                            <width>428</width>
+                            <width>411</width>
                             <height>232</height>
                            </rect>
                           </property>
-                          <widget class="QGraphicsView" name="graphicsView_Assets">
-                           <property name="geometry">
-                            <rect>
-                             <x>10</x>
-                             <y>10</y>
-                             <width>256</width>
-                             <height>192</height>
-                            </rect>
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <layout class="QGridLayout" name="gridLayout_18">
+                           <property name="sizeConstraint">
+                            <enum>QLayout::SetDefaultConstraint</enum>
                            </property>
-                          </widget>
+                           <property name="leftMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="topMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="rightMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="bottomMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="spacing">
+                            <number>0</number>
+                           </property>
+                           <item row="0" column="0">
+                            <widget class="QPushButton" name="toolButton_AddAsset">
+                             <property name="text">
+                              <string>Add Asset</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item row="3" column="1">
+                            <spacer name="verticalSpacer_8">
+                             <property name="orientation">
+                              <enum>Qt::Vertical</enum>
+                             </property>
+                             <property name="sizeHint" stdset="0">
+                              <size>
+                               <width>20</width>
+                               <height>40</height>
+                              </size>
+                             </property>
+                            </spacer>
+                           </item>
+                           <item row="1" column="1">
+                            <widget class="QGraphicsView" name="graphicsView_Assets"/>
+                           </item>
+                           <item row="1" column="0">
+                            <spacer name="horizontalSpacer_23">
+                             <property name="orientation">
+                              <enum>Qt::Horizontal</enum>
+                             </property>
+                             <property name="sizeHint" stdset="0">
+                              <size>
+                               <width>40</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                            </spacer>
+                           </item>
+                           <item row="1" column="2">
+                            <spacer name="horizontalSpacer_24">
+                             <property name="orientation">
+                              <enum>Qt::Horizontal</enum>
+                             </property>
+                             <property name="sizeHint" stdset="0">
+                              <size>
+                               <width>40</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                            </spacer>
+                           </item>
+                          </layout>
                          </widget>
                         </widget>
                        </widget>
@@ -1507,7 +1593,7 @@
                     <item row="2" column="0">
                      <widget class="QTabWidget" name="tabWidget_EventType">
                       <property name="currentIndex">
-                       <number>0</number>
+                       <number>3</number>
                       </property>
                       <widget class="QWidget" name="tab_Objects">
                        <attribute name="title">
@@ -1539,8 +1625,8 @@
                             <rect>
                              <x>0</x>
                              <y>0</y>
-                             <width>98</width>
-                             <height>28</height>
+                             <width>432</width>
+                             <height>651</height>
                             </rect>
                            </property>
                            <property name="sizePolicy">
@@ -1584,8 +1670,8 @@
                             <rect>
                              <x>0</x>
                              <y>0</y>
-                             <width>98</width>
-                             <height>28</height>
+                             <width>432</width>
+                             <height>651</height>
                             </rect>
                            </property>
                            <property name="sizePolicy">
@@ -1629,8 +1715,8 @@
                             <rect>
                              <x>0</x>
                              <y>0</y>
-                             <width>98</width>
-                             <height>28</height>
+                             <width>432</width>
+                             <height>651</height>
                             </rect>
                            </property>
                            <property name="sizePolicy">
@@ -1674,8 +1760,8 @@
                             <rect>
                              <x>0</x>
                              <y>0</y>
-                             <width>98</width>
-                             <height>28</height>
+                             <width>432</width>
+                             <height>651</height>
                             </rect>
                            </property>
                            <property name="sizePolicy">
@@ -1719,8 +1805,8 @@
                             <rect>
                              <x>0</x>
                              <y>0</y>
-                             <width>98</width>
-                             <height>28</height>
+                             <width>432</width>
+                             <height>651</height>
                             </rect>
                            </property>
                            <property name="sizePolicy">
@@ -1770,8 +1856,8 @@
                             <rect>
                              <x>0</x>
                              <y>0</y>
-                             <width>98</width>
-                             <height>28</height>
+                             <width>432</width>
+                             <height>651</height>
                             </rect>
                            </property>
                            <property name="sizePolicy">

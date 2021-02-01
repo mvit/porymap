@@ -3,6 +3,9 @@
 Asset::Asset()
 {
     metatiles = new QList<uint16_t>;
+    for (uint16_t i = 0; i < 4; i++) {
+        metatiles->append(i);
+    }
     collisions = new QList<QPair<uint16_t,uint16_t>>;
 }
 

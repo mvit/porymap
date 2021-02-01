@@ -15,8 +15,8 @@ public:
         this->asset = asset;
     }
     Map *map = nullptr;
-    MetatileSelector *metatileSelector;
-    Asset *asset;
+    MetatileSelector *metatileSelector = nullptr;
+    Asset *asset = nullptr;
     void draw();
 
 protected:

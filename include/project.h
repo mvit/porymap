@@ -89,7 +89,7 @@ public:
     QMap<QString, Tileset*> *tilesetCache = nullptr;
     Tileset* loadTileset(QString, Tileset *tileset = nullptr);
     Tileset* getTileset(QString, bool forceLoad = false);
-    QMap<QString, QStringList> tilesetLabels;
+    Asset* getAssets(QString label);    QMap<QString, QStringList> tilesetLabels;
 
     Blockdata* readBlockdata(QString);
     bool loadBlockdata(Map*);

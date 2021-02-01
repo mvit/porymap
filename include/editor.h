@@ -16,6 +16,7 @@
 #include "movementpermissionsselector.h"
 #include "project.h"
 #include "ui_mainwindow.h"
+#include "assetpixmapitem.h"
 #include "bordermetatilespixmapitem.h"
 #include "connectionpixmapitem.h"
 #include "currentselectedmetatilespixmapitem.h"
@@ -56,6 +57,7 @@ public:
     void displayMetatileSelector();
     void displayMapMetatiles();
     void displayMapMovementPermissions();
+    void displayAssets();
     void displayBorderMetatiles();
     void displayCurrentMetatilesSelection();
     void redrawCurrentMetatilesSelection();
@@ -122,12 +124,14 @@ public:
     MapRuler *map_ruler = nullptr;
 
     QGraphicsScene *scene_metatiles = nullptr;
+    QGraphicsScene *scene_assets = nullptr;
     QGraphicsScene *scene_current_metatile_selection = nullptr;
     QGraphicsScene *scene_selected_border_metatiles = nullptr;
     QGraphicsScene *scene_collision_metatiles = nullptr;
     QGraphicsScene *scene_elevation_metatiles = nullptr;
     MetatileSelector *metatile_selector_item = nullptr;
 
+    AssetPixmapItem *selected_asset_item = nullptr;
     BorderMetatilesPixmapItem *selected_border_metatiles_item = nullptr;
     CurrentSelectedMetatilesPixmapItem *current_metatile_selection_item = nullptr;
     MovementPermissionsSelector *movement_permissions_selector_item = nullptr;

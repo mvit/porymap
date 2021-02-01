@@ -178,6 +178,7 @@ private slots:
     void on_toolButton_Dropper_clicked();
     void on_toolButton_Move_clicked();
     void on_toolButton_Shift_clicked();
+    void on_toolButton_AddAsset_clicked();
 
     void onOpenMapListContextMenu(const QPoint &point);
     void onAddNewMapToGroupClick(QAction* triggeredAction);
@@ -325,6 +326,7 @@ private:
 
     bool isProjectOpen();
     void showExportMapImageWindow(ImageExporterMode mode);
+    void redrawAsset();
     void redrawMetatileSelection();
 
     QObjectList shortcutableObjects() const;

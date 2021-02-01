@@ -662,6 +662,9 @@ void MainWindow::refreshMapScene()
     ui->graphicsView_currentMetatileSelection->setScene(editor->scene_current_metatile_selection);
     ui->graphicsView_currentMetatileSelection->setFixedSize(editor->current_metatile_selection_item->pixmap().width() + 2, editor->current_metatile_selection_item->pixmap().height() + 2);
 
+    ui->graphicsView_Assets->setScene(editor->scene_assets);
+    ui->graphicsView_Assets->setFixedSize(editor->selected_asset_item->pixmap().width() + 2, editor->selected_asset_item->pixmap().height() + 2);
+
     ui->graphicsView_Collision->setScene(editor->scene_collision_metatiles);
     //ui->graphicsView_Collision->setSceneRect(editor->scene_collision_metatiles->sceneRect());
     ui->graphicsView_Collision->setFixedSize(editor->movement_permissions_selector_item->pixmap().width() + 2, editor->movement_permissions_selector_item->pixmap().height() + 2);
@@ -1308,6 +1311,22 @@ void MainWindow::redrawMetatileSelection()
         pos *= scale;
         ui->scrollArea_2->ensureVisible(pos.x(), pos.y(), 8 * scale, 8 * scale);
     }
+}
+
+void MainWindow::redrawAsset()
+{
+    double scale = pow(3.0, static_cast<double>(porymapConfig.getMetatilesZoom() - 30) / 30.0);
+    QTransform transform;
+    transform.scale(scale, scale);
+
+    ui->graphicsView_Assets->setTransform(transform);
+    ui->graphicsView_Assets->setFixedSize(editor->selected_asset_item->pixmap().width() * scale + 2, editor->selected_asset_item->pixmap().height() * scale + 2);
+
+//    QPoint size = editor->selected_asset_item->asset->dimensions;
+//    if (size.x() == 1 and size.y() == 1) {
+
+//    }
+
 }
 
 void MainWindow::currentMetatilesSelectionChanged()
@@ -2232,6 +2251,19 @@ void MainWindow::on_toolButton_deleteObject_clicked() {
             }
         }
     }
+}
+
+void MainWindow::on_toolButton_AddAsset_clicked()
+{
+    Asset *newAsset = new Asset();
+    newAsset->metatiles = editor->metatile_selector_item->getSelectedMetatiles();
+    newAsset->collisions = editor->metatile_selector_item->getSelectedCollisions();
+    newAsset->dimensions = editor->metatile_selector_item->getSelectionDimensions();
+    editor->selected_asset_item->asset = newAsset;
+    editor->selected_asset_item->draw();
+    redrawAsset();
+    checkToolButtons();
+
 }
 
 void MainWindow::on_toolButton_Paint_clicked()

@@ -1741,6 +1741,10 @@ Tileset* Project::getTileset(QString label, bool forceLoad) {
     }
 }
 
+Asset* Project::getAssets(QString label) {
+
+}
+
 void Project::saveTextFile(QString path, QString text) {
     QFile file(path);
     if (file.open(QIODevice::WriteOnly)) {

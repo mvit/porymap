@@ -5,17 +5,23 @@
 void AssetPixmapItem::mousePressEvent(QGraphicsSceneMouseEvent * event) {
     //Make it so on mouse click, selection is overwritten
     //On right click tile is overwritten
-    QList<uint16_t> assetTiles = *asset->metatiles;
-    QList<QPair<uint16_t, uint16_t>> assetCollisions = *asset->collisions;
     QPoint assetDimensions = asset->dimensions;
-    int width = assetDimensions.x();
-    int height = assetDimensions.y();
+    QList<uint16_t> tiles;
+    QList<QPair<uint16_t,uint16_t>> collisions;
+
+    for(uint16_t tile: *asset->metatiles) {
+        tiles.append(tile);
+    }
+
+    for(QPair<uint16_t, uint16_t> collision: *asset->collisions) {
+        collisions.append(collision);
+    }
 
     metatileSelector->setExternalSelection(
-                width,
-                height,
-                assetTiles,
-                assetCollisions
+                assetDimensions.x(),
+                assetDimensions.y(),
+                tiles,
+                collisions
                 );
 }
 
